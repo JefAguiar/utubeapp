@@ -1,0 +1,14 @@
+{
+    "firebaseConfig": {
+        "apiKey": "AIzaSyDZMV-wcyIvcan5wHJmpXmWrJFd1dEng2w",
+        "authDomain": "utubeapp-c443b.firebaseapp.com",
+        "databaseURL": "https://utubeapp-c443b.firebaseio.com",
+        "projectId": "utubeapp-c443b",
+        "storageBucket": "utubeapp-c443b.appspot.com",
+        "messagingSenderId": "389173255653"
+    },
+    "googleApiConfig": {
+      "apiKey": "AIzaSyBdVut9QCzqAHBzfDEh30yUp4E529som6s"
+    }
+    
+}
