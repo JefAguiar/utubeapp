@@ -12,7 +12,8 @@ import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 class App extends Component {
   componentWillMount() {
-    firebase.initializeApp(config.firebaseConfig);
+   firebase.initializeApp(config.firebaseConfig);
+
 }
   render() {
     return (

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import SearchBar from './SearchBar';
 import VideoDetail from './VideoDetail';
 import VideoList from './VideoList';
+import Timer from './Timer';
 import {
     videoSearch,
     userLogOut
@@ -27,8 +28,11 @@ const Home = (props) => {
         <MDBContainer>
             <br />
             <MDBRow>
-                <MDBCol md="10">
+                <MDBCol md="8">
                     <SearchBar onSearchTermChange={searchTerm => videoSearch(searchTerm)} />
+                </MDBCol>
+                <MDBCol md="2">
+                   <Timer />
                 </MDBCol>
                 <MDBCol md="2">
                     <button onClick={() => userLogOut()} className="btn btn-danger">Sign Out!</button>

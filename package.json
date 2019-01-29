@@ -6,6 +6,7 @@
     "firebase": "^5.8.0",
     "firebaseui": "^3.5.2",
     "mdbreact": "^4.9.0",
+    "moment": "^2.24.0",
     "react": "^16.7.0",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.7.0",
