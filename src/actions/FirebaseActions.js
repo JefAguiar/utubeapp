@@ -23,9 +23,7 @@ export const createUserDb = (user) => {
 export const getSavedVideosFromDb = (callback) => {
     let auth = firebase.auth();
     firebase.database().ref(`/users/${auth.currentUser.uid}/video`)
-        .on('value', snapshot => {
-            if (snapshot.val()) callback(snapshot.val());
-        });
+        .on('value', snapshot => callback(snapshot.val()));
 };
 
 export const setSavedVideosDb = (state) => {

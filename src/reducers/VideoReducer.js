@@ -40,7 +40,7 @@ export default (state = INITIAL_STATE, action) => {
         case SET_ALL_VIDEOS_FOR_LATER: {
             return {
                 ...state,
-                videosForLater: action.videosForLater || []
+                videosForLater: action.videosForLater
             }
         }
         default:

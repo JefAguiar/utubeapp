@@ -68,9 +68,9 @@ export const unsaveVideoForLater = video => (dispatch, getState) => {
     setSavedVideosDb(getState());
 };
 
-export const setAllSavedVideos = ({ videosForLater }) => {
+export const setAllSavedVideos = (snapshot = null) => {
     return {
         type: SET_ALL_VIDEOS_FOR_LATER,
-        videosForLater
+        videosForLater: snapshot === null? [] : snapshot.videosForLater
     };
 };
