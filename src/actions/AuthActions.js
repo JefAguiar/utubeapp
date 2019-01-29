@@ -4,7 +4,7 @@ import {
 } from './types';
 import firebase from 'firebase'
 import { createUserDb, getSavedVideosFromDb } from './FirebaseActions';
-import { setVideoDefault } from './VideoActions';
+import { setVideoDefault, setAllSavedVideos } from './VideoActions';
 
 export const userLoginSuccess = user => {
     const {
@@ -54,7 +54,7 @@ export const userOnAuthStateChange = () => dispatch => {
         if (user) {
             dispatch(userLoginSuccess(user));
             createUserDb(user);
-            getSavedVideosFromDb(dispatch);
+            getSavedVideosFromDb(snapshot => dispatch(setAllSavedVideos(snapshot)));
         }
         else
             dispatch(userSetDefault());

@@ -1,5 +1,4 @@
 import firebase from 'firebase';
-import { setAllSavedVideos } from './VideoActions';
 
 export const createUserDb = (user) => {
 
@@ -21,12 +20,11 @@ export const createUserDb = (user) => {
         });
 };
 
-export const getSavedVideosFromDb = (dispatch) => {
+export const getSavedVideosFromDb = (callback) => {
     let auth = firebase.auth();
     firebase.database().ref(`/users/${auth.currentUser.uid}/video`)
         .on('value', snapshot => {
-            if (snapshot.val())
-                dispatch(setAllSavedVideos(snapshot.val().videosForLater));
+            if (snapshot.val()) callback(snapshot.val());
         });
 };
 
