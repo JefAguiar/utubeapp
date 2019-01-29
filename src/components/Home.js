@@ -29,13 +29,13 @@ const Home = (props) => {
             <br />
             <MDBRow>
                 <MDBCol md="8">
-                    <SearchBar onSearchTermChange={searchTerm => videoSearch(searchTerm)} />
+                    <SearchBar onSearchTermChange={videoSearch} />
                 </MDBCol>
                 <MDBCol md="2">
                    <Timer />
                 </MDBCol>
                 <MDBCol md="2">
-                    <button onClick={() => userLogOut()} className="btn btn-danger">Sign Out!</button>
+                    <button onClick={userLogOut} className="btn btn-danger">Sign Out!</button>
                 </MDBCol>
             </MDBRow>
             <MDBRow>
