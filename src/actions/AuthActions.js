@@ -42,6 +42,22 @@ export const userSetDefault = () => {
     };
 };
 
+export const createUser = user => {
+    const { displayName,
+        email,
+        phoneNumber,
+        photoURL,
+        uid } = user;
+
+    createUserDb({
+        displayName,
+        email,
+        phoneNumber,
+        photoURL,
+        uid
+    });
+};
+
 export const userLogOut = () => dispatch => {
     firebase.auth().signOut().then(() => {
         dispatch(userSetDefault());
@@ -53,7 +69,7 @@ export const userOnAuthStateChange = () => dispatch => {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             dispatch(userLoginSuccess(user));
-            createUserDb(user);
+            createUser(user);
             getSavedVideosFromDb(snapshot => dispatch(setAllSavedVideos(snapshot)));
         }
         else

@@ -4,20 +4,8 @@ export const createUserDb = (user) => {
 
     let auth = firebase.auth();
 
-    const { displayName,
-        email,
-        phoneNumber,
-        photoURL,
-        uid } = user;
-
     firebase.database().ref(`/users/${auth.currentUser.uid}/user`)
-        .set({
-            displayName,
-            email,
-            phoneNumber,
-            photoURL,
-            uid
-        });
+        .set(user);
 };
 
 export const getSavedVideosFromDb = (callback) => {
