@@ -21,18 +21,12 @@ class Timer extends Component {
         clearInterval(this.intervalId);
     }
 
-    tick = () => {
-        this.setState({
-            currentTime: this.getTime()
-        })
-    }
+    tick = () => this.setState({ currentTime: this.getTime()});
 
     getTime = () => moment().format('L LTS');
 
     render() {
-        return (
-            <MDBCard>{this.state.currentTime}</MDBCard>
-        );
+        return <MDBCard>{this.state.currentTime}</MDBCard>;
     }
 }
 
